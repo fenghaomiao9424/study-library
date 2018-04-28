@@ -1,0 +1,28 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": ["iOS >= 8", "Android >= 4.1", "Firefox > 20", "last 7 versions"]
+        }
+      }
+    ],
+    "stage-2",
+    "es2015"
+  ],
+  "plugins": [
+    "transform-vue-jsx",
+    "transform-runtime",
+    [
+      "component",
+      [
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-chalk"
+        }
+      ]
+    ]
+  ]
+}

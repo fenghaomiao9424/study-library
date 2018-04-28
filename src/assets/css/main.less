@@ -1,0 +1,55 @@
+@color: #33cde5;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+/* 统一样式*/
+body {
+  font-size: 14px;
+  line-height: 1;
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; overflow: hidden; position: absolute; top: 0; left: 0; bottom: 0; font-weight: 400; width: 100%; -webkit-font-smoothing: antialiased;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 15px;
+  color: #dcdcdc;
+}
+
+img {
+  content: normal !important;
+}
+
+.router-view {
+}
+
+p {
+  margin: 0;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-10 {
+  margin: 10px 0;
+}
+
+.message-tip {
+  color: @color;
+  font-size: 14px;
+}
+// 标准化element-ui样式
+.el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active {
+  color: @color;
+}
+.el-button.el-tooltip.item.el-button--default {
+  margin-left: 20px;
+  background-color: @color;
+  color: #fff;
+  border-color: @color;
+}
