@@ -64,7 +64,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: config.build.index,
       template: 'index.html',
       inject: true,
-      env: 'production',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -109,9 +108,10 @@ const webpackConfig = merge(baseWebpackConfig, {
       minChunks: 3
     }),
 
+    // copy custom static assets
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, '../merchantStatic'),
+        from: path.resolve(__dirname, '../static'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }

@@ -79,7 +79,7 @@
 
 export default {
   name: 'App',
-  data() {
+  data () {
     return {
       // 当前激活的菜单
       activeIndex: '',
@@ -87,16 +87,16 @@ export default {
       isCollapse: false
     }
   },
-  mounted() {
+  mounted () {
     this.activeIndex = this.$route.path
   },
   methods: {
-    showOrHide() {
+    showOrHide () {
       this.isCollapse = !this.isCollapse
     }
   },
   watch: {
-    $route(to, from) {
+    $route (to, from) {
       if (!to.meta.alone) {
         this.activeIndex = to.path
       }

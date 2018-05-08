@@ -6,7 +6,7 @@
 <script>
 export default {
   name: 'page-css',
-  data() {
+  data () {
     return {
     }
   },

@@ -84,7 +84,7 @@
 <script>
 export default {
   name: 'page-grandient',
-  data() {
+  data () {
     return {
     }
   },
@@ -128,13 +128,13 @@ export default {
       background: linear-gradient(0deg, @color-from, @color-to);
     }
     &.rainbow {
-      background: linear-gradient(left, #ff5809, #ff9224, #ffd306, #9aff02, #5cadad, #b766ad);
+      background: -webkit-linear-gradient(left, #ff5809, #ff9224, #ffd306, #9aff02, #5cadad, #b766ad);
     }
     &.opacity {
       background: linear-gradient(left, rgba(51, 205, 229, 0), rgba(51, 205, 229, 1));
     }
     &.repeat {
-      background: repeating-linear-gradient(left, #ffd306, @color-from 10%, @color-to 20%);
+      background: -webkit-repeating-linear-gradient(left, #ffd306, @color-from 10%, @color-to 20%);
     }
   }
   .div-radial-grandient {

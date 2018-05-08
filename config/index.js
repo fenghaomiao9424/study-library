@@ -6,21 +6,19 @@ const path = require('path')
 
 module.exports = {
   dev: {
+
     // Paths
-    assetsSubDirectory: 'merchantStatic',
-    assetsPublicPath: '/merchant',
-    proxyTable: {
-      '/v1/api': {
-        target: 'http://sao.huifenqi.com',
-        changeOrigin: true
-      }
-    },
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+    proxyTable: {},
+
     // Various Dev Server settings
-    port: 8082, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: 'localhost', // can be overwritten by process.env.HOST
+    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
-    errorOverlay: false,
+    errorOverlay: true,
     notifyOnErrors: true,
-    poll: true, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+    poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
     // Use Eslint Loader?
     // If true, your code will be linted during bundling and
@@ -28,7 +26,7 @@ module.exports = {
     useEslint: true,
     // If true, eslint errors and warnings will also be shown in the error overlay
     // in the browser.
-    showEslintErrorsInOverlay: true,
+    showEslintErrorsInOverlay: false,
 
     /**
      * Source Maps
@@ -42,7 +40,7 @@ module.exports = {
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
     cacheBusting: true,
 
-    cssSourceMap: false
+    cssSourceMap: true
   },
 
   build: {
@@ -51,18 +49,19 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'merchantStatic',
+    assetsSubDirectory: 'static',
     assetsPublicPath: '/',
 
     /**
      * Source Maps
      */
+
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 
-    // Gzip off by default as many popular merchantStatic hosts such as
-    // Surge or Netlify already gzip all merchantStatic assets for you.
+    // Gzip off by default as many popular static hosts such as
+    // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
     productionGzip: false,
