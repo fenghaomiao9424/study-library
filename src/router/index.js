@@ -5,7 +5,8 @@ import css from '@/views/css/index'
 import grandient from '@/views/css/css3/grandient'
 import animation from '@/views/css/css3/animation'
 import flex from '@/views/css/flex'
-import functionArr from '@/views/functionArr'
+import functionArr from '@/views/js/functionArr'
+import es6 from '@/views/js/es6'
 
 Vue.use(Router)
 const router = new Router({
@@ -23,7 +24,8 @@ const router = new Router({
       ]
     },
     { path: '/flex', component: flex },
-    { path: '/functionArr', component: functionArr }
+    { path: '/js/functionArr', component: functionArr },
+    { path: '/js/function/functionEs6', component: es6 }
   ]
 })
 

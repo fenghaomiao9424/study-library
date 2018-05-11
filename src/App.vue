@@ -36,11 +36,9 @@
           </template>
           <el-menu-item-group>
             <template slot="title">方法</template>
-            <el-menu-item index="/functionArr">数组方法</el-menu-item>
+            <el-menu-item index="/js/functionArr">数组方法</el-menu-item>
             <el-menu-item index="2-2">对象方法</el-menu-item>
-          </el-menu-item-group>
-          <el-menu-item-group title="ES6">
-            <el-menu-item index="2-3">promise</el-menu-item>
+            <el-menu-item index="/js/function/functionEs6">ES6</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="3">
@@ -61,9 +59,29 @@
         <i class="el-icon-menu" @click="showOrHide"></i>
         <div>welcome to my project</div>
       </header>
-      <main class="project-main-content">
-        <router-view class="router-view"></router-view>
-      </main>
+      <div class="main-container">
+        <div class="nav-level-2" v-if="isShowLevel2">
+          <el-menu
+            :default-active="activeIndex"
+            class="el-menu-vertical-demo"
+            background-color="#2D3839"
+            text-color="#fff"
+            active-text-color="#33cde5">
+            <el-menu-item index="1">
+              <span slot="title">字符串扩展</span>
+            </el-menu-item>
+            <el-menu-item index="2">
+              <span slot="title">对象扩展</span>
+            </el-menu-item>
+            <el-menu-item index="3">
+              <span slot="title">数组扩展</span>
+            </el-menu-item>
+          </el-menu>
+        </div>
+        <main class="project-main-content">
+          <router-view class="router-view"></router-view>
+        </main>
+      </div>
     </main>
     <!-- 作者简介 -->
     <div class="author">
@@ -84,10 +102,15 @@ export default {
       // 当前激活的菜单
       activeIndex: '',
       // 是否展开收起左侧导航
-      isCollapse: false
+      isCollapse: false,
+      isShowLevel2: false
     }
   },
   mounted () {
+    if (this.$route.path.split('/').length === 4) {
+      this.isCollapse = true
+      this.isShowLevel2 = true
+    }
     this.activeIndex = this.$route.path
   },
   methods: {
@@ -97,6 +120,8 @@ export default {
   },
   watch: {
     $route (to, from) {
+      this.isCollapse = to.path.split('/').length === 4
+      this.isShowLevel2 = to.path.split('/').length === 4
       if (!to.meta.alone) {
         this.activeIndex = to.path
       }
@@ -154,6 +179,21 @@ export default {
     border-radius: 5px;
     overflow: auto;
   }
+  .main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  .nav-level-2 {
+    flex: 0 0 150px;
+    background-color:#2D3839;
+    .el-menu {
+      border-right: 1px solid #2D3839;
+    }
+  }
+  .router-view {
+    flex: 1;
+  }
   .project-header {
     flex: 0 0 60px;
     position: relative;
@@ -173,7 +213,7 @@ export default {
       cursor: pointer;
     }
   }
-  .el-menu {
+  .project-aside .el-menu {
     border-right: 1px solid rgb(40, 47, 47);
     width: 200px;
   }
