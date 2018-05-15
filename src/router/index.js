@@ -6,12 +6,14 @@ import grandient from '@/views/css/css3/grandient'
 import animation from '@/views/css/css3/animation'
 import flex from '@/views/css/flex'
 import functionArr from '@/views/js/functionArr'
-import es6 from '@/views/js/es6'
+import es6 from '@/views/js/es6/index'
+import esFunctionStr from '@/views/js/es6/function/str'
+import esFunctionArr from '@/views/js/es6/function/array'
 
 Vue.use(Router)
 const router = new Router({
   base: 'project',
-  mode: 'history',
+  mode: 'hash',
   routes: [
     { path: '/', redirect: '/css' },
     {
@@ -25,7 +27,15 @@ const router = new Router({
     },
     { path: '/flex', component: flex },
     { path: '/js/functionArr', component: functionArr },
-    { path: '/js/function/functionEs6', component: es6 }
+    {
+      path: '/js/es6',
+      redirect: '/js/es6/esFunctionStr',
+      component: es6,
+      children: [
+        { path: '/js/es6/esFunctionStr', component: esFunctionStr },
+        { path: '/js/es6/esFunctionArr', component: esFunctionArr }
+      ]
+    }
   ]
 })
 

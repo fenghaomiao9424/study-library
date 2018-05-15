@@ -1,6 +1,6 @@
 <template>
   <div class="page-function-es6">
-    <p>es6方法</p>
+    <router-view></router-view>
   </div>
 </template>
 <script>

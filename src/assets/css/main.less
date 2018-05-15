@@ -12,6 +12,10 @@ body {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; overflow: hidden; position: absolute; top: 0; left: 0; bottom: 0; font-weight: 400; width: 100%; -webkit-font-smoothing: antialiased;
 }
 
+pre {
+  font-size: 14px;
+  font-family: Consolas,"Courier New",Courier,FreeMono,monospace;
+}
 input::-webkit-input-placeholder {
   font-size: 15px;
   color: #dcdcdc;
@@ -21,11 +25,18 @@ img {
   content: normal !important;
 }
 
-.router-view {
-}
-
-p {
+h4 {
   margin: 0;
+  padding: 0;
+  font-size: 16px;
+  margin-top: 10px;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+p {
+  margin: 5px 0;
+  font-size: 14px;
 }
 
 .margin-bottom-20 {
@@ -52,4 +63,17 @@ p {
   background-color: @color;
   color: #fff;
   border-color: @color;
+}
+
+// 代码框
+.code-content {
+  background-color:#2D3839;
+  color:#fff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  margin: 0;
+  .result {
+    color: #a8a494;
+  }
 }

@@ -38,7 +38,7 @@
             <template slot="title">方法</template>
             <el-menu-item index="/js/functionArr">数组方法</el-menu-item>
             <el-menu-item index="2-2">对象方法</el-menu-item>
-            <el-menu-item index="/js/function/functionEs6">ES6</el-menu-item>
+            <el-menu-item index="/js/es6">ES6</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="3">
@@ -66,14 +66,15 @@
             class="el-menu-vertical-demo"
             background-color="#2D3839"
             text-color="#fff"
+            :router="true"
             active-text-color="#33cde5">
-            <el-menu-item index="1">
+            <el-menu-item index="/js/es6/esFunctionStr">
               <span slot="title">字符串扩展</span>
             </el-menu-item>
             <el-menu-item index="2">
               <span slot="title">对象扩展</span>
             </el-menu-item>
-            <el-menu-item index="3">
+            <el-menu-item index="/js/es6/esFunctionArr">
               <span slot="title">数组扩展</span>
             </el-menu-item>
           </el-menu>
