@@ -68,14 +68,8 @@
             text-color="#fff"
             :router="true"
             active-text-color="#33cde5">
-            <el-menu-item index="/js/es6/esFunctionStr">
-              <span slot="title">字符串扩展</span>
-            </el-menu-item>
-            <el-menu-item index="2">
-              <span slot="title">对象扩展</span>
-            </el-menu-item>
-            <el-menu-item index="/js/es6/esFunctionArr">
-              <span slot="title">数组扩展</span>
+            <el-menu-item v-for="nav in navList" :index="nav.index" :key="nav.key">
+              <span slot="title">{{nav.title}}</span>
             </el-menu-item>
           </el-menu>
         </div>
@@ -105,6 +99,11 @@ export default {
       // 是否展开收起左侧导航
       isCollapse: false,
       isShowLevel2: false
+    }
+  },
+  computed: {
+    navList: function () {
+      return this.$store.state.navList
     }
   },
   mounted () {

@@ -12,6 +12,22 @@ export default {
   },
   mounted () {
     this.getRariom()
+    let nav = [{
+      index: '/js/es6/esFunctionStr',
+      title: '字符串扩展',
+      key: 1
+    },
+    {
+      index: '/js/es6/esFunctionStr',
+      title: '对象扩展',
+      key: 2
+    },
+    {
+      index: '/js/es6/esFunctionArr',
+      title: '数组扩展',
+      key: 3
+    }]
+    this.$store.commit('setNavlist', nav)
   },
   methods: {
     // 获取随机数
