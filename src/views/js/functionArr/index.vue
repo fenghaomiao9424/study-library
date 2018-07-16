@@ -12,8 +12,14 @@ console.log(arr1, arr2)
     <h4>2.数组深拷贝</h4>
     <p>函数递归</p>
     <pre class="code-content">
-let arr1 = [1, 2, 3, [4, 5]]
-<span class="result">//</span></pre>
+function deepCopy(arr) {
+  let arrCopy = Array.isArray(arr) ? [] : {}
+  for (let i in arr) {
+    (typeof (arr[i]) === 'object') ? arrCopy[i] = this.deepCopy(arr[i]) : arrCopy[i] = arr[i]
+  }
+  return arrCopy
+}
+</pre>
     <p>JSON方法(缺点：无法转换function)</p>
     <pre class="code-content">
 let arr1 = [1, 2, 3, [4, 5]]
@@ -39,12 +45,17 @@ export default {
     }
   },
   mounted () {
-    this.getRariom()
+    let arr = {'d': 2, 'c': {'f': 8}}
+    console.log(this.deepCopy(arr))
   },
   methods: {
     // 获取随机数
-    getRariom () {
-      // let arr1 = [1, 2, 3, 4, [1, 3]]
+    deepCopy (arr) {
+      let arrCopy = Array.isArray(arr) ? [] : {}
+      for (let i in arr) {
+        (typeof (arr[i]) === 'object') ? arrCopy[i] = this.deepCopy(arr[i]) : arrCopy[i] = arr[i]
+      }
+      return arrCopy
     }
   }
 }
