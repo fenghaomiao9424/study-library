@@ -1,9 +1,11 @@
-<template lang="jade">
-  .page-function-es6-str
+<template>
+  <div class="page-function-es6-obj">
+    <p>es6-obj</p>
+  </div>
 </template>
 <script>
 export default {
-  name: 'page-function-es6-str',
+  name: 'page-function-es6-obj',
   data () {
     return {
     }
@@ -15,6 +17,6 @@ export default {
 }
 </script>
 <style lang="less">
-.page-function-es6-str {
+.page-function-es6-obj {
 }
 </style>

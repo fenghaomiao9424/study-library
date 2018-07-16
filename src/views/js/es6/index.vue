@@ -18,7 +18,7 @@ export default {
       key: 1
     },
     {
-      index: '/js/es6/esFunctionStr',
+      index: '/js/es6/esFunctionObj',
       title: '对象扩展',
       key: 2
     },

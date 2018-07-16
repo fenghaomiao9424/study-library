@@ -8,6 +8,7 @@ import flex from '@/views/css/flex'
 import functionArr from '@/views/js/functionArr'
 import es6 from '@/views/js/es6/index'
 import esFunctionStr from '@/views/js/es6/function/str'
+import esFunctionObj from '@/views/js/es6/function/object'
 import esFunctionArr from '@/views/js/es6/function/array'
 
 Vue.use(Router)
@@ -33,6 +34,7 @@ const router = new Router({
       component: es6,
       children: [
         { path: '/js/es6/esFunctionStr', component: esFunctionStr },
+        { path: '/js/es6/esFunctionObj', component: esFunctionObj },
         { path: '/js/es6/esFunctionArr', component: esFunctionArr }
       ]
     }
