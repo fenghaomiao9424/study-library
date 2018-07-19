@@ -30,7 +30,7 @@ const router = new Router({
     { path: '/js/functionArr', component: functionArr },
     {
       path: '/js/es6',
-      redirect: '/js/es6/esFunctionArr',
+      redirect: '/js/es6/esFunctionStr',
       component: es6,
       children: [
         { path: '/js/es6/esFunctionStr', component: esFunctionStr },
