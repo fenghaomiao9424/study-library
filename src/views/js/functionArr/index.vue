@@ -49,7 +49,6 @@ export default {
     console.log(this.deepCopy(arr))
   },
   methods: {
-    // 获取随机数
     deepCopy (arr) {
       let arrCopy = Array.isArray(arr) ? [] : {}
       for (let i in arr) {
