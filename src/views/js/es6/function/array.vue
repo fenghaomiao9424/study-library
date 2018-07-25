@@ -153,6 +153,39 @@ for(let [index, ele] of ['e', 'f', 'g'].entries()) {
 1 "f"
 2 "g"</span>
 </pre>
+    <!-- includes -->
+    <h4>9.includes</h4>
+    <p>1.该方法返回一个布尔值，表示数组是否包含目标值</p>
+    <p>2.该方法接受第二个参数，表示开始搜索的位置，如果为负数，则表示倒数的位置，如果值大于数组长度，则会重置为0</p>
+    <p>3.该方法可以取代indexOf方法无法识别NAN的缺点</p>
+<pre class="code-content">
+[1, 2, 3].includes(2)
+<span class="result">true</span>
+[1, 2, 3].includes(2, 3)
+<span class="result">false</span>
+[NaN].indexOf(NaN)
+<span class="result">-1</span>
+[NaN].includes(NaN)
+<span class="result">true</span>
+</pre>
+    <!-- 数组空位 -->
+    <h4>10.数组空位</h4>
+    <p>1.空位不是undefined</p>
+<pre class="code-content">
+0 in [undefined, undefined]
+<span class="result">true</span>
+0 in [,]
+<span class="result">false</span>
+</pre>
+    <p>2.forEach(), filter(), reduce(), every() 和some()都会跳过空位</p>
+    <p>3.map()会跳过空位，但会保留这个值</p>
+    <p>4.join()和toString()会将空位视为undefined，而undefined和null会被处理成空字符串。</p>
+    <p>5.Array.from方法会将数组的空位，转为undefined，也就是说，这个方法不会忽略空位。</p>
+    <p>6.扩展运算符（...）也会将空位转为undefined。</p>
+    <p>7.copyWithin()会连空位一起拷贝。</p>
+    <p>8.fill()会将空位视为正常的数组位置。</p>
+    <p>9.for...of循环也会遍历空位。</p>
+    <p>10.entries()、keys()、values()、find()和findIndex()会将空位处理成undefined。</p>
   </div>
 </template>
 <script>

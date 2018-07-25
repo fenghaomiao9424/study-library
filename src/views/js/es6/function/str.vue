@@ -6,14 +6,14 @@
       <pre class="code-content">
 console.log('𠮷'.charAt(0))
 <span class="result">// "\uD842"</span></pre>
-    <!-- inclouds, startsWith, endsWith -->
-    <h4>2.inclouds, startsWith, endsWith</h4>
+    <!-- includes, startsWith, endsWith -->
+    <h4>2.includes, startsWith, endsWith</h4>
       <p>1.三个方法都返回布尔值</p>
       <p>2.三个参数都接受第二个参数，表示开始搜索的位置</p>
       <p>3.使用第二个参数n时,endswith表示针对前n个字符</p>
       <pre class="code-content">
 let s = 'oba sa lang hei'
-console.log(s.inclouds(' s'))
+console.log(s.includes(' s'))
 <span class="result">// true</span>
 console.log(s.startWith('ba'))
 <span class="result">// false</span>
