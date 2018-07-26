@@ -39,6 +39,7 @@
             <el-menu-item index="/js/functionArr">数组方法</el-menu-item>
             <el-menu-item index="2-2">对象方法</el-menu-item>
             <el-menu-item index="/js/es6">ES6</el-menu-item>
+            <el-menu-item index="/js/functionOther">其它</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
         <el-submenu index="3">
@@ -122,9 +123,11 @@ export default {
     $route (to, from) {
       this.isCollapse = to.path.split('/').length === 4
       this.isShowLevel2 = to.path.split('/').length === 4
-      if (!to.meta.alone) {
-        this.activeIndex = to.path
-      }
+      console.log(to.path)
+      this.activeIndex = to.path
+      // if (!to.meta.alone) {
+      //   this.activeIndex = to.path
+      // }
     }
   }
 }

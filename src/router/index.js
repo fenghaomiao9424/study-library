@@ -6,10 +6,15 @@ import grandient from '@/views/css/css3/grandient'
 import animation from '@/views/css/css3/animation'
 import flex from '@/views/css/flex'
 import functionArr from '@/views/js/functionArr'
+// es6方法
 import es6 from '@/views/js/es6/index'
 import esFunctionStr from '@/views/js/es6/function/str'
 import esFunctionObj from '@/views/js/es6/function/object'
 import esFunctionArr from '@/views/js/es6/function/array'
+import esFunctionSymbol from '@/views/js/es6/function/Symbol'
+// 其它方法
+import functionOther from '@/views/js/functionOther/index'
+import lazyLayout from '@/views/js/functionOther/function/lazyLayout'
 
 Vue.use(Router)
 const router = new Router({
@@ -35,7 +40,16 @@ const router = new Router({
       children: [
         { path: '/js/es6/esFunctionStr', component: esFunctionStr },
         { path: '/js/es6/esFunctionObj', component: esFunctionObj },
-        { path: '/js/es6/esFunctionArr', component: esFunctionArr }
+        { path: '/js/es6/esFunctionArr', component: esFunctionArr },
+        { path: '/js/es6/esFunctionSymbol', component: esFunctionSymbol }
+      ]
+    },
+    {
+      path: '/js/functionOther',
+      redirect: '/js/functionOther/lazyLayout',
+      component: functionOther,
+      children: [
+        { path: '/js/functionOther/lazyLayout', component: lazyLayout }
       ]
     }
   ]

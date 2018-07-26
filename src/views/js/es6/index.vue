@@ -26,6 +26,11 @@ export default {
       index: '/js/es6/esFunctionArr',
       title: '数组扩展',
       key: 3
+    },
+    {
+      index: '/js/es6/esFunctionSymbol',
+      title: 'Symbol',
+      key: 4
     }]
     this.$store.commit('setNavlist', nav)
   },
