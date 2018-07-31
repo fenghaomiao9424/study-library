@@ -62,6 +62,4 @@ export default {
 }
 </script>
 <style lang="less">
-.page-function-es6-str {
-}
 </style>

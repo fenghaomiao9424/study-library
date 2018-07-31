@@ -31,6 +31,11 @@ export default {
       index: '/js/es6/esFunctionSymbol',
       title: 'Symbol',
       key: 4
+    },
+    {
+      index: '/js/es6/esFunctionSetAndMap',
+      title: 'Set和Map数据结构',
+      key: 5
     }]
     this.$store.commit('setNavlist', nav)
   },
@@ -46,6 +51,4 @@ export default {
 }
 </script>
 <style lang="less">
-.page-function-es6 {
-}
 </style>
