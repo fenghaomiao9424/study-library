@@ -36,6 +36,11 @@ export default {
       index: '/js/es6/esFunctionSetAndMap',
       title: 'Set和Map数据结构',
       key: 5
+    },
+    {
+      index: '/js/es6/esFunctionPromise',
+      title: 'Promise',
+      key: 6
     }]
     this.$store.commit('setNavlist', nav)
   },
