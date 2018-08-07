@@ -38,9 +38,14 @@ export default {
       key: 5
     },
     {
+      index: '/js/es6/esFunctionReflect',
+      title: 'Reflect',
+      key: 6
+    },
+    {
       index: '/js/es6/esFunctionPromise',
       title: 'Promise',
-      key: 6
+      key: 7
     }]
     this.$store.commit('setNavlist', nav)
   },

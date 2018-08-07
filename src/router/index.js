@@ -6,6 +6,7 @@ import grandient from '@/views/css/css3/grandient'
 import animation from '@/views/css/css3/animation'
 import flex from '@/views/css/flex'
 import functionArr from '@/views/js/functionArr'
+import functionObj from '@/views/js/functionObj'
 // es6方法
 import es6 from '@/views/js/es6/index'
 import esFunctionStr from '@/views/js/es6/function/str'
@@ -13,6 +14,7 @@ import esFunctionObj from '@/views/js/es6/function/object'
 import esFunctionArr from '@/views/js/es6/function/array'
 import esFunctionSymbol from '@/views/js/es6/function/Symbol'
 import esFunctionSetAndMap from '@/views/js/es6/function/setAndMap'
+import esFunctionReflect from '@/views/js/es6/function/Reflect'
 import esFunctionPromise from '@/views/js/es6/function/Promise'
 // 其它方法
 import functionOther from '@/views/js/functionOther/index'
@@ -35,6 +37,7 @@ const router = new Router({
     },
     { path: '/flex', component: flex },
     { path: '/js/functionArr', component: functionArr },
+    { path: '/js/functionObj', component: functionObj },
     {
       path: '/js/es6',
       redirect: '/js/es6/esFunctionStr',
@@ -45,6 +48,7 @@ const router = new Router({
         { path: '/js/es6/esFunctionArr', component: esFunctionArr },
         { path: '/js/es6/esFunctionSymbol', component: esFunctionSymbol },
         { path: '/js/es6/esFunctionSetAndMap', component: esFunctionSetAndMap },
+        { path: '/js/es6/esFunctionReflect', component: esFunctionReflect },
         { path: '/js/es6/esFunctionPromise', component: esFunctionPromise }
       ]
     },
