@@ -13,6 +13,7 @@ export default {
     }
   },
   mounted () {
+    console.log(new Date().toLocaleTimeString(), '/////')
     const imgList = document.getElementsByClassName('scroll-img')
     const ele = document.getElementsByClassName('project-main-content')[0]
     let n = 0

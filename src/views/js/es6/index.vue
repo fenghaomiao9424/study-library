@@ -46,6 +46,11 @@ export default {
       index: '/js/es6/esFunctionPromise',
       title: 'Promise',
       key: 7
+    },
+    {
+      index: '/js/es6/esFunctionGenerator',
+      title: 'Generator',
+      key: 8
     }]
     this.$store.commit('setNavlist', nav)
   },
