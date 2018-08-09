@@ -76,6 +76,50 @@ a.return('c')
     <h4>4.yield*表达式</h4>
     <p>1.如果在 Generator 函数内部，调用另一个 Generator 函数，默认情况下是没有效果的</p>
     <p>2.yield*表达式，用来在一个 Generator 函数里面执行另一个 Generator 函数</p>
+    <p>3.yield*后面的 Generator 函数（没有return语句时），等同于在 Generator 函数内部，部署一个for...of循环</p>
+    <p>4.如果yield*后面跟着一个数组，由于数组原生支持遍历器，因此就会遍历数组成员</p>
+    <p>5.任何数据结构只要有 Iterator 接口，就可以被yield*遍历</p>
+    <pre class="code-content">
+function* query () {
+    yield 1
+    yield* 'abc'
+}
+var a = query()
+a.next().value
+a.next().value
+<span class="result">1</span>
+<span class="result">a</span>
+</pre>
+    <!-- 作为对象属性的Generator函数 -->
+    <h4>5.作为对象属性的Generator函数</h4>
+    <p>1.如果对象的属性是Generator函数，可以简写成如下新式：</p>
+    <pre class="code-content">
+let obj = {
+  * generator() {
+    ....
+  }
+}
+</pre>
+    <h4>6.Generator函数的this</h4>
+    <p>1.Generator 函数也不能跟new命令一起用，会报错</p>
+    <p>2.使用call方法绑定 Generator 函数内部的this</p>
+    <pre class="code-content">
+function* gen() {
+  this.a = 1;
+  yield this.b = 2;
+  yield this.c = 3;
+}
+function F() {
+  return gen.call(gen.prototype);
+}
+var f = new F();
+f.next();
+f.next();
+f.next()
+f.a //1
+f.b //2
+f.c //3
+</pre>
   </div>
 </template>
 <script>

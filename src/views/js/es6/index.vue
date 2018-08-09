@@ -49,7 +49,7 @@ export default {
     },
     {
       index: '/js/es6/esFunctionGenerator',
-      title: 'Generator',
+      title: 'Generator函数',
       key: 8
     }]
     this.$store.commit('setNavlist', nav)

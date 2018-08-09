@@ -20,6 +20,7 @@ import esFunctionGenerator from '@/views/js/es6/function/Generator'
 // 其它方法
 import functionOther from '@/views/js/functionOther/index'
 import lazyLayout from '@/views/js/functionOther/function/lazyLayout'
+import eventTaggle from '@/views/js/functionOther/function/eventTaggle'
 
 Vue.use(Router)
 const router = new Router({
@@ -59,7 +60,8 @@ const router = new Router({
       redirect: '/js/functionOther/lazyLayout',
       component: functionOther,
       children: [
-        { path: '/js/functionOther/lazyLayout', component: lazyLayout }
+        { path: '/js/functionOther/lazyLayout', component: lazyLayout },
+        { path: '/js/functionOther/eventTaggle', component: eventTaggle }
       ]
     }
   ]

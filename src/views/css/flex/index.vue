@@ -22,12 +22,9 @@
       <el-tab-pane label="实例">
         <h4>1.放大缩小屏幕查看效果</h4>
         <div class="content">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          <template v-for="i in 6">
+            <div :key="i"></div>
+          </template>
         </div>
         <h4>2.左侧宽度固定，右边自适应</h4>
         <div class="content2">
