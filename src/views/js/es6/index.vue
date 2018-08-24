@@ -51,6 +51,16 @@ export default {
       index: '/js/es6/esFunctionGenerator',
       title: 'Generator函数',
       key: 8
+    },
+    {
+      index: '/js/es6/esFunctionAsync',
+      title: 'async',
+      key: 9
+    },
+    {
+      index: '/js/es6/esFunctionClass',
+      title: 'Class',
+      key: 10
     }]
     this.$store.commit('setNavlist', nav)
   },

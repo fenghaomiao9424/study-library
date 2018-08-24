@@ -17,6 +17,8 @@ import esFunctionSetAndMap from '@/views/js/es6/function/setAndMap'
 import esFunctionReflect from '@/views/js/es6/function/Reflect'
 import esFunctionPromise from '@/views/js/es6/function/Promise'
 import esFunctionGenerator from '@/views/js/es6/function/Generator'
+import esFunctionAsync from '@/views/js/es6/function/async'
+import esFunctionClass from '@/views/js/es6/function/Class'
 // 其它方法
 import functionOther from '@/views/js/functionOther/index'
 import lazyLayout from '@/views/js/functionOther/function/lazyLayout'
@@ -52,7 +54,9 @@ const router = new Router({
         { path: '/js/es6/esFunctionSetAndMap', component: esFunctionSetAndMap },
         { path: '/js/es6/esFunctionReflect', component: esFunctionReflect },
         { path: '/js/es6/esFunctionPromise', component: esFunctionPromise },
-        { path: '/js/es6/esFunctionGenerator', component: esFunctionGenerator }
+        { path: '/js/es6/esFunctionGenerator', component: esFunctionGenerator },
+        { path: '/js/es6/esFunctionAsync', component: esFunctionAsync },
+        { path: '/js/es6/esFunctionClass', component: esFunctionClass }
       ]
     },
     {

@@ -116,10 +116,10 @@ export default {
     border-radius: 5px;
     float: left;
     &.left {
-      background: linear-gradient(left, @color-from, @color-to);
+      background: linear-gradient(to left, @color-from, @color-to);
     }
     &.top {
-      background: linear-gradient(top, @color-from, @color-to);
+      background: linear-gradient(to top, @color-from, @color-to);
     }
     &.diagonal {
       background: linear-gradient(top left, @color-from, @color-to);
