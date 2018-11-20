@@ -123,7 +123,6 @@ export default {
     $route (to, from) {
       this.isCollapse = to.path.split('/').length === 4
       this.isShowLevel2 = to.path.split('/').length === 4
-      console.log(to.path)
       this.activeIndex = to.path
       // if (!to.meta.alone) {
       //   this.activeIndex = to.path

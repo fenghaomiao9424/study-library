@@ -23,6 +23,7 @@ import esFunctionClass from '@/views/js/es6/function/Class'
 import functionOther from '@/views/js/functionOther/index'
 import lazyLayout from '@/views/js/functionOther/function/lazyLayout'
 import eventTaggle from '@/views/js/functionOther/function/eventTaggle'
+import dataObserver from '@/views/js/functionOther/function/dataObserver'
 
 Vue.use(Router)
 const router = new Router({
@@ -65,7 +66,8 @@ const router = new Router({
       component: functionOther,
       children: [
         { path: '/js/functionOther/lazyLayout', component: lazyLayout },
-        { path: '/js/functionOther/eventTaggle', component: eventTaggle }
+        { path: '/js/functionOther/eventTaggle', component: eventTaggle },
+        { path: '/js/functionOther/dataObserver', component: dataObserver }
       ]
     }
   ]

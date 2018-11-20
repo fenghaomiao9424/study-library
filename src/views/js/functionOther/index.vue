@@ -19,6 +19,10 @@ export default {
       index: '/js/functionOther/eventTaggle',
       title: '事件委托',
       key: 2
+    }, {
+      index: '/js/functionOther/dataObserver',
+      title: '双向数据绑定',
+      key: 3
     }]
     this.$store.commit('setNavlist', nav)
   },
