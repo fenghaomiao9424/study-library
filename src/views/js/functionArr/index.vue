@@ -1,10 +1,18 @@
 <template>
   <div class="page-functionArr">
     <h4>1.数组浅拷贝</h4>
-    <p>sclice方法或concat</p>
+    <p>1.sclice方法或concat</p>
     <pre class="code-content">
 let arr1 = [1, 2, 3]
 let arr2 = arr1.slice(0) 或 let arr2 = arr1.concat([])
+arr2[0] = 5
+console.log(arr1, arr2)
+<span class="result">// [1, 2, 3], [5, 2, 3]</span>
+</pre>
+    <p>2.运算符‘...’</p>
+    <pre class="code-content">
+let arr1 = [1, 2, 3]
+let arr2 = [...arr1]
 arr2[0] = 5
 console.log(arr1, arr2)
 <span class="result">// [1, 2, 3], [5, 2, 3]</span>
@@ -35,6 +43,8 @@ arr2[0] = 5
 console.log(arr1, arr2)
 <span class="result">//[1, 2, ƒ, Array(2)], [5, 2, null, Array(2)]</span>
 </pre>
+    <h4>3.注意事项</h4>
+    <p>1.使用delete运算符可以将单元从数组中删除，但是请注意，单元删除后，数组的length属性并不会发生变化</p>
   </div>
 </template>
 <script>

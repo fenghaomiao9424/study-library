@@ -4,11 +4,9 @@
   <div class="content">
     <div class="content-left">
       <ul id="lists">
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
+        <li v-for="i in 5" :key="i">
+          {{i}}
+        </li>
       </ul>
     </div>
     <div class="content-right">

@@ -38,6 +38,7 @@
             <template slot="title">方法</template>
             <el-menu-item index="/js/functionArr">数组方法</el-menu-item>
             <el-menu-item index="/js/functionObj">对象方法</el-menu-item>
+            <el-menu-item index="/js/functionHanshu">函数方法</el-menu-item>
             <el-menu-item index="/js/es6">ES6</el-menu-item>
             <el-menu-item index="/js/functionOther">其它</el-menu-item>
           </el-menu-item-group>

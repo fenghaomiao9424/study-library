@@ -23,6 +23,10 @@ export default {
       index: '/js/functionOther/dataObserver',
       title: '双向数据绑定',
       key: 3
+    }, {
+      index: '/js/functionOther/dataType',
+      title: '数据类型',
+      key: 4
     }]
     this.$store.commit('setNavlist', nav)
   },

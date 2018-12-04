@@ -1,5 +1,7 @@
 <template>
-  <input />
+  <div class="page-function-dataObserver">
+    <h4>手写实现一个双向数据绑定</h4>
+  </div>
 </template>
 <script>
 export default {
@@ -9,10 +11,6 @@ export default {
     }
   },
   mounted () {
-    console.log(document.getElementsByTagName('input')[0])
-    document.getElementsByTagName('input')[0].addEventListener('change', () => {
-      console.log(123)
-    })
   }
 }
 </script>

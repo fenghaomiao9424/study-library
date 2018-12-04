@@ -7,6 +7,7 @@ import animation from '@/views/css/css3/animation'
 import flex from '@/views/css/flex'
 import functionArr from '@/views/js/functionArr'
 import functionObj from '@/views/js/functionObj'
+import functionHanshu from '@/views/js/functionHanshu'
 // es6方法
 import es6 from '@/views/js/es6/index'
 import esFunctionStr from '@/views/js/es6/function/str'
@@ -24,6 +25,7 @@ import functionOther from '@/views/js/functionOther/index'
 import lazyLayout from '@/views/js/functionOther/function/lazyLayout'
 import eventTaggle from '@/views/js/functionOther/function/eventTaggle'
 import dataObserver from '@/views/js/functionOther/function/dataObserver'
+import dataType from '@/views/js/functionOther/function/dataType'
 
 Vue.use(Router)
 const router = new Router({
@@ -43,6 +45,7 @@ const router = new Router({
     { path: '/flex', component: flex },
     { path: '/js/functionArr', component: functionArr },
     { path: '/js/functionObj', component: functionObj },
+    { path: '/js/functionHanshu', component: functionHanshu },
     {
       path: '/js/es6',
       redirect: '/js/es6/esFunctionStr',
@@ -67,7 +70,8 @@ const router = new Router({
       children: [
         { path: '/js/functionOther/lazyLayout', component: lazyLayout },
         { path: '/js/functionOther/eventTaggle', component: eventTaggle },
-        { path: '/js/functionOther/dataObserver', component: dataObserver }
+        { path: '/js/functionOther/dataObserver', component: dataObserver },
+        { path: '/js/functionOther/dataType', component: dataType }
       ]
     }
   ]
