@@ -26,6 +26,7 @@ import lazyLayout from '@/views/js/functionOther/function/lazyLayout'
 import eventTaggle from '@/views/js/functionOther/function/eventTaggle'
 import dataObserver from '@/views/js/functionOther/function/dataObserver'
 import dataType from '@/views/js/functionOther/function/dataType'
+import orderAlgorithm from '@/views/js/functionOther/function/orderAlgorithm'
 
 Vue.use(Router)
 const router = new Router({
@@ -71,7 +72,8 @@ const router = new Router({
         { path: '/js/functionOther/lazyLayout', component: lazyLayout },
         { path: '/js/functionOther/eventTaggle', component: eventTaggle },
         { path: '/js/functionOther/dataObserver', component: dataObserver },
-        { path: '/js/functionOther/dataType', component: dataType }
+        { path: '/js/functionOther/dataType', component: dataType },
+        { path: '/js/functionOther/orderAlgorithm', component: orderAlgorithm }
       ]
     }
   ]

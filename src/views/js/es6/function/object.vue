@@ -13,6 +13,20 @@ Object.is(+0, -0)
 <span class="result">false</span>
 Object.is(NAN, NAN)
 <span class="result">true</span></pre>
+    3.Object.is()的实现
+    <pre class="code-content">
+if (!Object.is) {
+    Object.is = function(v1, v2) {
+        if (v1 === 0 && v2 === 0) {
+            return 1 / v1 === 1 / v2  // 相当于-Infinity === Infinity 返回false
+        }
+        if (v1 !== v1) {
+            return v2 !== v2
+        }
+        return v1 === v2
+    }
+}
+</pre>
     <!-- Object.assign() -->
     <h4>2.Object.assign()</h4>
     <p>1.该方法用于对象的合并</p>
@@ -122,6 +136,4 @@ export default {
 }
 </script>
 <style lang="less">
-.page-function-es6-obj {
-}
 </style>

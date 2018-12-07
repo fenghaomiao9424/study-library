@@ -27,6 +27,10 @@ export default {
       index: '/js/functionOther/dataType',
       title: '数据类型',
       key: 4
+    }, {
+      index: '/js/functionOther/orderAlgorithm',
+      title: '排序算法',
+      key: 5
     }]
     this.$store.commit('setNavlist', nav)
   },
@@ -35,6 +39,4 @@ export default {
 }
 </script>
 <style lang="less">
-.page-function-functionOther {
-}
 </style>

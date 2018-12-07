@@ -186,6 +186,48 @@ for(let [index, ele] of ['e', 'f', 'g'].entries()) {
     <p>8.fill()会将空位视为正常的数组位置。</p>
     <p>9.for...of循环也会遍历空位。</p>
     <p>10.entries()、keys()、values()、find()和findIndex()会将空位处理成undefined。</p>
+    <h4>11.flat()方法实现</h4>
+    <pre class="code-content">
+Array.prototype.newFlat = function(deep = 1) {
+    const arr = this
+    const toNumber = +deep
+    let count = toNumber 小于 0 || !(toNumber) ? 0 : toNumber
+    let res = []
+    const run = function (arrChild) {
+        for (const item of arrChild) {
+            if (Array.isArray(item) && count > 0) {
+                count --
+                run(item)
+            } else {
+                res.push(item)
+            }
+        }
+    }
+    run(arr)
+    return res
+}
+let arr = [1, 2, [3, [4, 5]]]
+arr.newFlat()
+Array.prototype.newFlat = function(num = 1) {
+    let i = 0
+    let arrRes = []
+    let arr1 = this
+    const arrayDep = function(array) {
+        array.forEach(item => {
+            if (Array.isArray(item)) {
+                i++
+                i 小于 num && arrayDep(item)
+            } else {
+                arrRes.push(item)
+            }
+        })
+    }
+    arrayDep(arr1)
+    return arrRes
+}
+let arr = [1, 2, [3, [4, 5]]]
+arr.newFlat()
+</pre>
   </div>
 </template>
 <script>
@@ -202,6 +244,4 @@ export default {
 }
 </script>
 <style lang="less">
-.page-function-es6-arr {
-}
 </style>
