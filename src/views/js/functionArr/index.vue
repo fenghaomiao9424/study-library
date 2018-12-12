@@ -51,25 +51,11 @@ console.log(arr1, arr2)
 export default {
   name: 'page-functionArr',
   data () {
-    return {
-    }
+    return {}
   },
-  mounted () {
-    let arr = {'d': 2, 'c': {'f': 8}}
-    console.log(this.deepCopy(arr))
-  },
-  methods: {
-    deepCopy (arr) {
-      let arrCopy = Array.isArray(arr) ? [] : {}
-      for (let i in arr) {
-        (typeof (arr[i]) === 'object') ? arrCopy[i] = this.deepCopy(arr[i]) : arrCopy[i] = arr[i]
-      }
-      return arrCopy
-    }
-  }
+  mounted () {},
+  methods: {}
 }
 </script>
 <style lang="less">
-.page-functionArr {
-}
 </style>
