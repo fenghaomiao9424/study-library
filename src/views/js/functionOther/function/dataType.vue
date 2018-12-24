@@ -131,8 +131,25 @@ var timestamp = Date.now()
 [] + {} // "[object Object]"
 {} + [] // 0
 </pre>
+    <p>第一行代码中，{}出现在+运算符表达式中，因此它被当作一个值（空对象）来处理。所以[]会被强制类型转换为"",而{}会被强制类型转换为"[object Object]"</p>
+    <p>第二行代码中，{}被当作一个独立的<span>空代码块(不执行任何操作)</span>。代码结尾不需要分号，所以这里不存在语法上的问题。最后+[]将[]显示强制类型转换为0。</p>
     <p>6. -运算符</p>
     <p>-是数字减法运算符，所以a-0会将a强制类型转换为数字</p>
+    <p>在将一元减操作符应用于数值时，该值会变成负数。而当应用于非数值时，一元减操作符遵循与一元加操作符相同的规则，最后再将得到的数值转换为负数。</p>
+    <pre class="code-content">
+var s1 = '01'
+var s2 = '1.1'
+var s3 = 'z'
+var b = false
+var f = 1.1
+var o = {
+    valueOf: function() {
+        return -1
+    }
+}
+s1 = -s1  // -1
+s2
+</pre>
     <p>7.==</p>
     <p><strong>字符串和数字之间的相等比较，会将字符串转为数字</strong></p>
     <p><strong>其它类型和布尔类型之间的相等比较，会将布尔值转为数字</strong></p>
@@ -194,6 +211,24 @@ var a = ['42']
 var b = ['043']
 a 小于 b  // false
 </pre>
+    <!-- 数值转换 -->
+    <h4>5.数值转换</h4>
+    <p>有三个函数可以把非数值转换为数值：Number(),parseInt()，parseFloat()</p>
+    <p>parseInt()函数可以为这个函数提供第二个参数:转换时使用的基数（即多少进制）</p>
+    <pre class="code-content">
+Number('') // 0
+parseInt('') // NaN
+</pre>
+    <!-- 字符串转换 -->
+    <h4>6.字符串转换</h4>
+    <p>数值，布尔值，对象和字符串值都有toString()方法，但null和undefined值没有这个方法</p>
+    <p>toString()方法可以接收一个参数：输出数值的基数，默认是十进制</p>
+    <pre class="code-content">
+var num = 10
+num.toString(2) // '1010'
+</pre>
+    <p>String()函数能够将任何类型的值转换为字符串</p>
+    <p>要把某个值转换为字符串，可以使用加号操作符把它与一个字符串加在一起</p>
 </div>
 </template>
 <script>

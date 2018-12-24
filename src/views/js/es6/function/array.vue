@@ -37,6 +37,11 @@ console.log(a, b)
 let [a, ...b] = ['s']
 console.log(a, b)
 <span class="result">// s []</span></pre>
+    <p>将字符串转为数组</p>
+    <pre class="code-content">
+var str = 'hello'
+str.split('') 或 [...str] // ['h', 'e', 'l', 'l', 'o']
+</pre>
     <!-- Array.from -->
     <h4>2.Array.from()</h4>
     <p>1.Array.from还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组。</p>
@@ -208,25 +213,18 @@ Array.prototype.newFlat = function(deep = 1) {
 }
 let arr = [1, 2, [3, [4, 5]]]
 arr.newFlat()
-Array.prototype.newFlat = function(num = 1) {
-    let i = 0
-    let arrRes = []
-    let arr1 = this
-    const arrayDep = function(array) {
-        array.forEach(item => {
-            if (Array.isArray(item)) {
-                i++
-                i 小于 num && arrayDep(item)
-            } else {
-                arrRes.push(item)
-            }
-        })
-    }
-    arrayDep(arr1)
-    return arrRes
+</pre>
+    <h4>12.for...of循环</h4>
+    <p>for...of循环可以使用的范围包括数组，Set和Map结构，某些类似数组的对象（比如arguments对象，DOM NodeList对象），Gene让投入对象，以及字符串</p>
+    <p>原有的for...in循环，只能获得对象的键名，不能直接获取键值。for...of循环，允许遍历获得键值。</p>
+    <pre class="code-content">
+var arr = ['a', 'b', 'c', 'd']
+for (let a in arr) {
+    console.log(a) // 0 1 2 3
 }
-let arr = [1, 2, [3, [4, 5]]]
-arr.newFlat()
+for (let a of arr) {
+    console.log(a) // a b c d
+}
 </pre>
   </div>
 </template>

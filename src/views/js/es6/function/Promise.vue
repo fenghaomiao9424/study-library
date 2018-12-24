@@ -158,6 +158,8 @@ class MyPromise {
 }
 export default MyPromise
 </pre>
+    <h4>2.Promise注意问题：</h4>
+    <p>1.若向Promise.all([])传入空数组，它会立即完成，但Promise.race([])会挂住，且永远不会决议</p>
   </div>
 </template>
 <script>

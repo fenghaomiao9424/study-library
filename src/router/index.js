@@ -27,6 +27,8 @@ import eventTaggle from '@/views/js/functionOther/function/eventTaggle'
 import dataObserver from '@/views/js/functionOther/function/dataObserver'
 import dataType from '@/views/js/functionOther/function/dataType'
 import orderAlgorithm from '@/views/js/functionOther/function/orderAlgorithm'
+import grammar from '@/views/js/functionOther/function/grammar'
+import asyncHronous from '@/views/js/functionOther/function/asyncHronous'
 
 Vue.use(Router)
 const router = new Router({
@@ -73,7 +75,9 @@ const router = new Router({
         { path: '/js/functionOther/eventTaggle', component: eventTaggle },
         { path: '/js/functionOther/dataObserver', component: dataObserver },
         { path: '/js/functionOther/dataType', component: dataType },
-        { path: '/js/functionOther/orderAlgorithm', component: orderAlgorithm }
+        { path: '/js/functionOther/orderAlgorithm', component: orderAlgorithm },
+        { path: '/js/functionOther/grammar', component: grammar },
+        { path: '/js/functionOther/asyncHronous', component: asyncHronous }
       ]
     }
   ]

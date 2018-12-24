@@ -28,9 +28,17 @@ export default {
       title: '数据类型',
       key: 4
     }, {
+      index: '/js/functionOther/grammar',
+      title: '语法',
+      key: 5
+    }, {
       index: '/js/functionOther/orderAlgorithm',
       title: '排序算法',
-      key: 5
+      key: 6
+    }, {
+      index: '/js/functionOther/asyncHronous',
+      title: '异步',
+      key: 7
     }]
     this.$store.commit('setNavlist', nav)
   },
