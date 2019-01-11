@@ -148,14 +148,18 @@ var o = {
     }
 }
 s1 = -s1  // -1
-s2
+s2 = -s2  // -1.1
+s3 = -s3  // NaN
+b = -b  // 0
+f = -f  // -1.1
+o = -o  // 1
 </pre>
     <p>7.==</p>
     <p><strong>字符串和数字之间的相等比较，会将字符串转为数字</strong></p>
     <p><strong>其它类型和布尔类型之间的相等比较，会将布尔值转为数字</strong></p>
     <p><strong>null和undefined与自己==和互相==，与其它值都不==</strong></p>
     <p><strong>字符串或数字与对象之间的比较，会将对象处理为ToPrimitive()</strong></p>
-    <p><strong>null和undefined不能被封装成包装类型</strong></p>
+    <p><strong>null和undefined不能被封装成包装类型，也不能转换成其它任何值</strong></p>
     <pre class="code-content">
 var a = null
 var b = Object(a)
@@ -211,6 +215,12 @@ var a = ['42']
 var b = ['043']
 a 小于 b  // false
 </pre>
+    <p>9.比较运算符</p>
+    <p>任何操作数与NaN关系比较，结果都是false</p>
+    <pre class="code-content">
+NaN 小于 3  // false
+NaN 大于 3  // false
+</pre>
     <!-- 数值转换 -->
     <h4>5.数值转换</h4>
     <p>有三个函数可以把非数值转换为数值：Number(),parseInt()，parseFloat()</p>
@@ -229,6 +239,37 @@ num.toString(2) // '1010'
 </pre>
     <p>String()函数能够将任何类型的值转换为字符串</p>
     <p>要把某个值转换为字符串，可以使用加号操作符把它与一个字符串加在一起</p>
+    <h4>7.RegExp类型</h4>
+    <p>g: 表示全局模式，即模式将被应用于所有字符串</p>
+    <p>i: 表示不区分大小写模式</p>
+    <p>m: 表示多行模式，即在到达一行文本末尾时还会继续查找下一行中是否存在与模式匹配的项</p>
+    <p>正则表达式中的元字符包括：<span>( [ { \ ^ $ | } ? * + . ] )</span></p>
+    <p>创建正则表达式的方式：字面量形式和RegExp构造函数</p>
+    <pre class="code-content">
+var reg = /[bc]at/i  等同于
+var reg = new RegExp("[bc]at", "i")
+</pre>
+    <p>RegExp实例属性：1.global 布尔值，表示是否设置了g标志。2.ignoreCase 布尔值，表示是否设置了i标志。3.lastIndex 整数，表示开始搜索下一个匹配项的字符位置。4.multiline 布尔值，表示是否设置了m标志。5.source 正则表达式的字符串表示，按照字面量形式而非传入构造函数中的字符串模式返回</p>
+    <!-- Numaber类型 -->
+    <h4>8.Number类型</h4>
+    <p>toString()方法可以传递一个表示基数的参数，表示返回几进制数值的字符串形式</p>
+    <!-- String类型 -->
+    <h4>9.String类型</h4>
+    <p>charAt()方法返回给定位置的字符</p>
+    <p>charCodeAt()返回字符编码</p>
+    <p>concat()方法用于将<span>一或多个</span>字符串拼接起来，返回拼接得到的新字符串.不会修改原字符串</p>
+    <p>slice(）和substring()的第二个参数指定的是子字符串最后一个字符后面的位置</p>
+    <p>substr()的第二个参数指定的是返回的字符个数</p>
+    <p>slice(),substr(),substring()不会修改字符串本身的值</p>
+    <p>slice()会将传入的负值与字符串的长度相加</p>
+    <p>substr()将负的第一个参数加上字符串的长度，将负的第二个参数转换为0</p>
+    <p>substring()把所有负值参数都转换为0</p>
+    <p>match()方法只接受一个参数，要么是一个正则表达式，要么是一个RegExp对象</p>
+    <p>search()方法返回字符串中第一个匹配项的索引</p>
+    <p>replace()第一个参数可以是一个RegExp对象或者一个字符串，第二个参数可以是一个字符串或者一个函数</p>
+    <p>split()方法可以接受第二个参数，用于指定数组的大小</p>
+    <p>localCompare()比较两个字符串在字母表中的大小</p>
+    <p>fromCharCode()接受一或多个字符编码，然后将它们转换成一个字符串</p>
 </div>
 </template>
 <script>

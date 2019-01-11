@@ -62,6 +62,12 @@ console.log(obj1, obj2)
 </pre>
       <h4>4.原型链</h4>
       <p>定义：如果在第一个对象上没有找到需要的属性或者方法引用，引擎就会继续在[[prototype]]关联的对象上进行查找。同理，如果在后者中也没有找到需要的引用就会继续查找它的[[prototype]]，以此类推，这一系列对象的链接被称为“原型链”</p>
+      <!-- 单体内置对象 -->
+      <h4>5.单体内置对象</h4>
+      <p><strong>1.global对象</strong></p>
+      <p>1.encodeURI(),encodeURIComponent(),decodeURI(),decodeURIComponent()</p>
+      <p>2.decodeURI只能对使用encodeURI替换的字符进行解码。其它两个类似</p>
+      <p>3.eval()只接受一个参数，即要执行的js字符串</p>
   </div>
 </template>
 <script>

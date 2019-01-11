@@ -21,7 +21,7 @@
         <p class="margin-10">对角渐变(高度太小，效果不明显):定义方向(to bottom、to top、to right、to left、to bottom right，等等)</p>
         <div class="content">
           <div class="div-grandient diagonal"></div>
-          <el-tooltip class="item" effect="dark" content="background: linear-gradient(top left, #33cde5, #282F2F);" placement="right">
+          <el-tooltip class="item" effect="dark" content="background: -webkit-gradient(linear, left top, right bottom, from(#33cde5), to(#282F2F));" placement="right">
             <el-button>查看代码</el-button>
           </el-tooltip>
         </div>
@@ -42,7 +42,7 @@
         <p class="margin-10">透明度渐变：色值使用rgba</p>
         <div class="content">
           <div class="div-grandient opacity"></div>
-          <el-tooltip class="item" effect="dark" content="background: linear-gradient(left, rgba(51, 205, 229, 0), rgba(51, 205, 229, 1));" placement="right">
+          <el-tooltip class="item" effect="dark" content="background: -webkit-gradient(linear, left top, right top, from(rgba(51, 205, 229, 0)), to(#33cde5));" placement="right">
             <el-button>查看代码</el-button>
           </el-tooltip>
         </div>
@@ -122,6 +122,7 @@ export default {
       background: linear-gradient(to top, @color-from, @color-to);
     }
     &.diagonal {
+      background: -webkit-gradient(linear, left top, right bottom, from(#33cde5), to(#282F2F));
       background: linear-gradient(top left, @color-from, @color-to);
     }
     &.deg {
@@ -131,6 +132,7 @@ export default {
       background: -webkit-linear-gradient(left, #ff5809, #ff9224, #ffd306, #9aff02, #5cadad, #b766ad);
     }
     &.opacity {
+      background: -webkit-gradient(linear, left top, right top, from(rgba(51, 205, 229, 0)), to(#33cde5));
       background: linear-gradient(left, rgba(51, 205, 229, 0), rgba(51, 205, 229, 1));
     }
     &.repeat {
