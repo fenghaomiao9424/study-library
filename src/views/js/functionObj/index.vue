@@ -68,6 +68,25 @@ console.log(obj1, obj2)
       <p>1.encodeURI(),encodeURIComponent(),decodeURI(),decodeURIComponent()</p>
       <p>2.decodeURI只能对使用encodeURI替换的字符进行解码。其它两个类似</p>
       <p>3.eval()只接受一个参数，即要执行的js字符串</p>
+      <p>4.Global对象的所有属性：undefined,NaN,Infinity,Object,Array,Function,Boolean,String,Number,Date,RegExp,Error,EvalError,RangeError,ReferenceError,SyntaxError,TypeError,URIError</p>
+      <h4>6.Math对象</h4>
+      <p>1.min()和max()方法用于确定一组数值中的最小值和最大值</p>
+      <p>2.Math.ceil()向上舍入，总是将数值向上舍入为最接近的整数</p>
+      <p>3.Math.floor()向下舍入，总是将数值向下舍入为最接近的整数</p>
+      <p>4.Math.round()标准舍入，将数值四舍五入为最接近的整数</p>
+      <p>5.Math.random()返回大于等于0小于1的一个随机数</p>
+      <p>6.取得两个数之间的数：</p>
+      <pre class="code-content">
+function selectFrom(lowerValue, upperValue) {
+  var choices = upperValue - lowerValue + 1;
+  return Math.floor(Math.random() * choices + lowerValue)
+}
+selectFrom(2, 10) // 介于2和10之间（包括2和10）的一个值
+</pre>
+      <!-- 对象方法 -->
+      <h4>7.对象方法</h4>
+      <p>1.在调用Object.defineProperty()方法时，如果不指定，configurable,enumerable,writable特性的默认值都是false</p>
+      <p>2.访问器属性：getter和setter函数</p>
   </div>
 </template>
 <script>
@@ -78,11 +97,8 @@ export default {
     }
   },
   mounted () {
-    this.getObj()
   },
   methods: {
-    getObj () {
-    }
   }
 }
 </script>
