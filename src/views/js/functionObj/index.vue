@@ -87,6 +87,171 @@ selectFrom(2, 10) // 介于2和10之间（包括2和10）的一个值
       <h4>7.对象方法</h4>
       <p>1.在调用Object.defineProperty()方法时，如果不指定，configurable,enumerable,writable特性的默认值都是false</p>
       <p>2.访问器属性：getter和setter函数</p>
+      <p>3.如果一个对象是访问器属性，这个对象有configurable,enumerable,get和set</p>
+      <p>4.如果是数据类型，这个对象的属性有configurable,enumerable,writable,value</p>
+      <p><strong>5.使用new操作符创建对象的步骤：</strong></p>
+      <p>1) 创建一个新对象</p>
+      <p>2) 将构造函数的作用域赴给新对象</p>
+      <p>3) 执行构造函数中的代码</p>
+      <p>4) 返回新对象</p>
+      <pre class="code-content">
+function Person(name, age, job) {
+      this.name = name;
+      this.job = job;
+      this.age = age;
+      this.sayName = sayName;
+}
+function sayName() {
+      alert(this.name)
+}
+var person1 = new Person('feng', 29, 'Teacher')
+var person2 = new Person('haomiao', 11, 'Student')
+</pre>
+      <p>6.使用hasOwnProperty()方法可以检测一个属性是存在于实例中，还是存在于原型中</p>
+      <p>7.getOwnPropertyDescriptor()方法只能用于实例属性</p>
+      <p>8.in操作符会通过对象能够访问给定属性时返回true,无论该属性存在于实例中还是原型中</p>
+      <p>9.in操作符返回true而hasOwnProperty()返回false，就可以确定属性是原型中的属性</p>
+      <p>10.for...in 循环返回的是所有能够通过对象访问的，可枚举的属性，其中既包括存在于实例中的属性，<span>也包括存在于原型中的属性</span></p>
+      <p>11.Object.keys()取得对象上所有可枚举的实例属性，不包括原型上的</p>
+      <p>12.Object.getOwnPropertyName()得到所有实例属性，无论是否可枚举，不包括原型上的</p>
+      <pre class="code-content">
+function Person() {}
+Person.prototype = {
+      name: "Nicholas",
+      age: 29,
+      job: "Software"
+      sayName: function() {
+            alert(this.name)
+      }
+}
+var friend = new Person()
+friend instanceof Object   // true
+friend instanceof Person   // true
+friend.constructor == Person  // false
+friend.constructor == Object  // true
+</pre>
+      <!-- 继承 -->
+      <h4>8.继承实现</h4>
+      <p><strong>1.原型链</strong></p>
+      <p>实现的本质是重写原型对象</p>
+      <pre class="code-content">
+function SuperType() {
+   this.property = true;
+}
+SuperType.prototype.getSuperValue = function() {
+      return this.property;
+}
+function SubType() {
+      this.subproperty = false;
+}
+// 继承了SuperType
+SubType.prototype = new SuperType();
+SubType.prototype.getSubValue = function() {
+      return this.subproperty;
+}
+var instance = new SubType();
+alert(instance.getSuperValue()) // true
+</pre>
+      <p>确定原型和实例的关系：insatance, isPrototypeOf()</p>
+      <p>给原型添加方法的代码一定要放在替换原型的语句之后</p>
+      <p>在通过原型链实现继承时，不能使用字面量创建原型方法</p>
+      <pre class="code-content">
+function SuperType() {
+      this.property = true
+}
+SuperType.prototype.getSuperValue = function() {
+      return this.property
+}
+function SubType() {
+      this.subproperty = false
+}
+SubType.prototype =  new SuperType()
+// 以下代码会覆盖上一行
+SubType.prototype = {
+      getSubValue: function() {
+            return this.subproperty
+      }
+      someMethod: function() {
+            return false
+      }
+}
+var instance =  new SubType()
+instance.getSuperValue()  // error
+</pre>
+      <p><span>原型链实现继承最主要的问题来自于包含引用类型值的原型</span></p>
+      <p><strong>2.借用构造函数</strong></p>
+      <pre class="code-content">
+function SuperType() {
+      this.colors = ['red', 'blue', 'green']
+}
+function SubType() {
+      SuperType.call(this)
+}
+var instance1 = new SubType()
+instance1.colors.push('black')
+instance1.colors   // ['red', 'blue', 'green', 'black']
+</pre>
+      <p>借用构造函数优势：可以在子类型构造函数中向超类型构造函数传递参数</p>
+      <p>问题：方法都在构造函数中定义，因此函数复用就无从谈起了</p>
+      <p><strong>3.组合继承</strong></p>
+      <p>将原型链和构造函数结合到一起</p>
+      <pre class="code-content">
+function SuperType(name) {
+      this.name = name;
+      this.colors = ['red', 'blue', 'green']
+}
+SuperType.prototype.sayName = function() {
+      alert(this.name)
+}
+function SubType(name, age) {
+      SuperType.call(this, name)
+      this.age = age
+}
+SubType.prototype = new SuperType(); 
+SubType.prototype.constructor = SubType; 
+SubType.prototype.sayAge = function(){
+    alert(this.age);
+};
+var instance1 = new SubType("Nicholas", 29);
+instance1.colors.push("black");
+alert(instance1.colors);  //"red,blue,green,black"
+instance1.sayName();  //"Nicholas";
+instance1.sayAge();  //29
+var instance2 = new SubType("Greg", 27);
+alert(instance2.colors);   //"red,blue,green"
+instance2.sayName();   //"Greg";
+instance2.sayAge();   //27
+</pre>
+      <p><strong>4.原型式继承</strong></p>
+      <p>这种继承方式要求你必须有一个对象作为另一个对象的基础</p>
+      <pre class="code-content">
+var person = {
+      name: 'Ni',
+      friends: ['a', 'b', 'c']
+}
+var anotherPerson = Object.create(person)
+anotherPerson.name = 'Greg'
+anotherPerson.friends.push('d')
+person.friends  // ['a', 'b', 'c', 'd']
+</pre>
+      <p><span>Object.create()与Object.defineProperties()方法的第二个参数格式相同</span></p>
+      <p><strong>5.寄生式继承</strong></p>
+      <pre class="code-content">
+function createAnother (original) {
+      var clone = object(original)
+      clone.sayHi = funciton() {
+            alert("hi")
+      }
+      return clone
+}
+var person = {
+      name: '123'
+      friends: ['a', 'b', 'c']
+}
+var anotherPerson = createAnother(person)
+anotherPerson.sayHi() // 'hi'
+</pre>
+      <p><strong>6.寄生组合式继承</strong></p>
   </div>
 </template>
 <script>

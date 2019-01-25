@@ -35,7 +35,7 @@ const router = new Router({
   base: 'project',
   mode: 'hash',
   routes: [
-    { path: '/', redirect: '/css' },
+    { path: '/', redirect: '/js/functionObj' },
     {
       path: '/css',
       redirect: '/css3/grandient',
