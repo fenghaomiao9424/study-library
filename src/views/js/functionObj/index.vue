@@ -207,8 +207,8 @@ function SubType(name, age) {
       SuperType.call(this, name)
       this.age = age
 }
-SubType.prototype = new SuperType(); 
-SubType.prototype.constructor = SubType; 
+SubType.prototype = new SuperType();
+SubType.prototype.constructor = SubType;
 SubType.prototype.sayAge = function(){
     alert(this.age);
 };
@@ -252,6 +252,25 @@ var anotherPerson = createAnother(person)
 anotherPerson.sayHi() // 'hi'
 </pre>
       <p><strong>6.寄生组合式继承</strong></p>
+      <p>组合继承最大的问题就是无论什么情况下，都会调用两次超类型构造函数</p>
+      <pre class="code-content">
+function SuperType(name) {
+      this.name = name;
+      this.colors = ['red', 'blue', 'green']
+}
+SuperType.prototype.sayName = function() {
+      alert(this.name)
+}
+function SubType(name, age) {
+      SuperType.call(this, name)  // 第二次调用SuperType()
+      this.age = age
+}
+SubType.prototype = new SuperType()  // 第一次调用SuperType()
+SubType.prototype.constructor = SubType
+SubType.prototype.sayAge = function() {
+      alert(this.age)
+}
+</pre>
   </div>
 </template>
 <script>
