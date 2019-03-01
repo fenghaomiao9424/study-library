@@ -271,6 +271,23 @@ SubType.prototype.sayAge = function() {
       alert(this.age)
 }
 </pre>
+      <!-- BOM -->
+      <h4>9.BOM</h4>
+      <p><strong>1.window对象</strong></p>
+      <p>1.全局变量会成为window对象的属性</p>
+      <p>2.全局变量不能通过delete操作符删除，而直接在window对象上定义的属性可以（var定义的变量的[[configurable]]的值被设置为false,所以不能被删除）</p>
+      <p>moveTo()和moveBy()方法有可能将窗口精确地移动到一个新位置。moveTo()接受的是新位置的x,y坐标，moveBy()接受的是在水平和垂直方向上移动的像素数</p>
+      <p>resizeTo()和resizeBy()可以调整浏览器窗口的大小。resizeTo()接收浏览器窗口的新宽度和新高度，resizeBy接收新窗口与原窗口的度数差</p>
+      <!-- DOM -->
+      <h4>10.DOM</h4>
+      <p><strong>DOM操作方法(Node类型)</strong></p>
+      <p>firstChild(),lastChild(),childNodes(),previousSibling(),nextSibling(),hasChildNodes(),appendChild()</p>
+      <p>insertBefore()这个方法接受两个参数:要插入的节点和作为参照的节点。如果参照节点是null，则insertBefore()和appendChild()执行相同的操作</p>
+      <p>replaceChild()方法接受两个参数：要插入的节点和要替换的节点</p>
+      <p>removeChild()接受一个参数，即要删除的节点。与使用replaceChild()方法一样，移除的节点仍然为文档所有，只不过在文档中已经没有了自己的位置</p>
+      <p>cloneNode()方法接受一个布尔值参数，表示是否执行深复制，也就是是否复制节点及整个子节点树</p>
+      <p><strong>Document类型</strong></p>
+      <p>documentElement,firstChild,childNodes[0]的值相同，都指向html</p>
   </div>
 </template>
 <script>

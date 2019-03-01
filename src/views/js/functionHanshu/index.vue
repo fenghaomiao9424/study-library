@@ -107,6 +107,58 @@ var a = new Array(1,2,3)
 a // [1,2,3]
 </pre>
     <p>5.数组的map会跳过空位，但会保留空位，filter,forEach,every,some函数会跳过空位，join和toString会将空位视为undefined,而undefined和null会被处理成空字符串</p>
+    <h4>6.闭包</h4>
+    <p>1.闭包是指有权限访问另外一个函数作用域中的变量的函数</p>
+    <p>2.创建闭包的常见方式，就是在一个函数内部创建另一个函数</p>
+    <p>3.用作块级作用域的匿名函数的语法如下：</p>
+    <pre class="code-content">
+(function() {
+    // 这里是块级作用域
+})()
+</pre>
+    <h4>7.特权方法</h4>
+    <p>1.有权访问私有变量和私有函数的共有方法称为特权方法</p>
+    <p>2.有两种在对象上创建特权方法的方式，构造函数中定义特权方法和静态私有变量</p>
+    <pre class="code-content">
+//构造函数法
+function Person(name) {
+    <!-- 特权方法 -->
+    this.getName = function() {
+        return name
+    }
+    <!-- 特权方法 -->
+    this.setName = function(value) {
+        name = value
+    }
+}
+var person = new Person('Ni')
+person.getName() // 'Ni'
+</pre>
+    <p><strong>构造函数模式的缺点是针对每个实例都会创建同样一组新方法</strong></p>
+    <p>初始化未经声明的变量，会创建一个全局变量。在严格模式下给未经声明的变量赋值会导致错误</p>
+    <pre class="code-content">
+//静态私有变量
+(function() {
+    var name = "";
+    Person = function(value) {
+        name = value
+    }
+    Person.prototype.getName = function() {
+        return name
+    }
+    Person.prototype.setName = function(value){
+        name = value
+    }
+})()
+var person1 = new Person('Ni')
+person1.getName() // "Ni"
+Person.setName('Ge')
+Person1.getName() // 'Ge'
+
+var person2 = new Person('Mi')
+person1.getName() 'Mi'
+person2.getName() 'Mi'
+</pre>
   </div>
 </template>
 <script>
@@ -121,6 +173,8 @@ export default {
   },
   methods: {
     test () {
+      var i = 0
+      console.log(i)
     }
   }
 }
