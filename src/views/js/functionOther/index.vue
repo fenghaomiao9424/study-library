@@ -39,6 +39,10 @@ export default {
       index: '/js/functionOther/asyncHronous',
       title: '异步',
       key: 7
+    }, {
+      index: '/js/functionOther/throAnddeb',
+      title: '防抖与节流',
+      key: 8
     }]
     this.$store.commit('setNavlist', nav)
   },

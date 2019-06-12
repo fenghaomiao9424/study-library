@@ -29,6 +29,7 @@ import dataType from '@/views/js/functionOther/function/dataType'
 import orderAlgorithm from '@/views/js/functionOther/function/orderAlgorithm'
 import grammar from '@/views/js/functionOther/function/grammar'
 import asyncHronous from '@/views/js/functionOther/function/asyncHronous'
+import throAnddeb from '@/views/js/functionOther/function/throAnddeb'
 
 Vue.use(Router)
 const router = new Router({
@@ -77,7 +78,8 @@ const router = new Router({
         { path: '/js/functionOther/dataType', component: dataType },
         { path: '/js/functionOther/orderAlgorithm', component: orderAlgorithm },
         { path: '/js/functionOther/grammar', component: grammar },
-        { path: '/js/functionOther/asyncHronous', component: asyncHronous }
+        { path: '/js/functionOther/asyncHronous', component: asyncHronous },
+        { path: '/js/functionOther/throAnddeb', component: throAnddeb }
       ]
     }
   ]

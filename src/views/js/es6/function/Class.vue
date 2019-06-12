@@ -38,7 +38,7 @@ let room = new class {
 room.getRoomName()
 <span class="result">// qijushi</span>
 </pre>
-       <p>7.类不存在变量提升</p>
+       <p>7.类不存在变量提升,这与es5完全不同</p>
        <p>8.name属性:ES6 的类只是 ES5 的构造函数的一层包装，所以函数的许多特性都被Class继承</p>
        <pre class="code-content">
 class point {
@@ -86,6 +86,10 @@ class B extends A {
       <p>6.在子类的静态方法中通过super调用父类的方法时，方法内部的this指向当前的子类，而不是子类的实例</p>
       <p>7.在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错</p>
       <p>8.父类的静态方法，也会被子类继承</p>
+      <h4>3.es6与es5的区别</h4>
+      <p>1.类的内部所有定义的方法，都是不可枚举的</p>
+      <p>2.class如果不用new关键字直接调用会报错</p>
+      <p>3.class不存在变量提升</p>
     </div>
 </template>
 <script>
