@@ -33,7 +33,7 @@ export default {
       key: 5
     }, {
       index: '/js/functionOther/orderAlgorithm',
-      title: '排序算法',
+      title: '算法',
       key: 6
     }, {
       index: '/js/functionOther/asyncHronous',

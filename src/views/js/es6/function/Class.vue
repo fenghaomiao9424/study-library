@@ -90,6 +90,8 @@ class B extends A {
       <p>1.类的内部所有定义的方法，都是不可枚举的</p>
       <p>2.class如果不用new关键字直接调用会报错</p>
       <p>3.class不存在变量提升</p>
+      <p>4.类和模块的内部，默认就是严格模式，所以不需要使用use strict指定运行模式</p>
+      <p>5.class内部无法重写类名</p>
     </div>
 </template>
 <script>

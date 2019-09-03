@@ -178,7 +178,7 @@ SubType.prototype = {
 var instance =  new SubType()
 instance.getSuperValue()  // error
 </pre>
-      <p><span>原型链实现继承最主要的问题来自于包含引用类型值的原型</span></p>
+      <p><span>原型链实现继承的几个问题：1.共享引用类型的值。2.在创建子类型的实例时，不能向超类型的构造函数中传递参数。3.不能实现多继承</span></p>
       <p><strong>2.借用构造函数</strong></p>
       <pre class="code-content">
 function SuperType() {
@@ -192,9 +192,10 @@ instance1.colors.push('black')
 instance1.colors   // ['red', 'blue', 'green', 'black']
 </pre>
       <p>借用构造函数优势：可以在子类型构造函数中向超类型构造函数传递参数</p>
-      <p>问题：方法都在构造函数中定义，因此函数复用就无从谈起了</p>
+      <p><span>问题：1.方法都在构造函数中定义，因此函数复用就无从谈起了2.超类型的原型中定义的方法，对子类型而言是不可见的</span></p>
       <p><strong>3.组合继承</strong></p>
       <p>将原型链和构造函数结合到一起</p>
+      <p><span>其背后的思路是使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承</span></p>
       <pre class="code-content">
 function SuperType(name) {
       this.name = name;

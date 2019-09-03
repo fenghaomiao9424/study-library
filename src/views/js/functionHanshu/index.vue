@@ -159,6 +159,35 @@ var person2 = new Person('Mi')
 person1.getName() 'Mi'
 person2.getName() 'Mi'
 </pre>
+    <h4>8.构造函数与普通函数的区别</h4>
+    <p>1.构造函数返回的是<span>一个新对象</span>具有构造函数的变量及方法</p>
+    <p>2.构造函数用new关键字调用</p>
+    <p>3.构造函数内部可以使用this关键字（普通函数原则上不可以！因为普通函数的this相当于window）</p>
+    <p>4.构造函数默认不用return返回值</p>
+    <p>5.函数命名建议首个字母大写，与普通函数区分开。</p>
+    <h4>9.手写实现一个bind</h4>
+    <p>bind的特性：1.可以指定this2.返回一个函数3.可以传入参数4.柯里化</p>
+    <pre class="code-content">
+Function.prototype.bind2 = function(context, ...args) {
+    let self = this
+    return function(...arg) {
+        return self.apply(context, args.concat(arg))
+    }
+}
+</pre>
+    <h4>10.parseInt及Number()的简单实现</h4>
+    <pre class="code-content">
+function parse(str) {
+    let strList = [...str]
+    strList = strList.map(function(str) {
+        return +str
+    })
+    strList = strList.reduce(function(x, y){
+        return 10*x +y
+    })
+    return strList
+}
+</pre>
   </div>
 </template>
 <script>
@@ -172,10 +201,6 @@ export default {
     this.test()
   },
   methods: {
-    test () {
-      var i = 0
-      console.log(i)
-    }
   }
 }
 </script>

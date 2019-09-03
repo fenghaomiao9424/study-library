@@ -61,6 +61,11 @@ export default {
       index: '/js/es6/esFunctionClass',
       title: 'Class',
       key: 10
+    },
+    {
+      index: '/js/es6/esModule',
+      title: 'Module',
+      key: 11
     }]
     this.$store.commit('setNavlist', nav)
   },

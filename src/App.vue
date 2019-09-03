@@ -87,6 +87,10 @@
     <div class="author-desc">
       精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩精致的猪猪女孩
     </div>
+    <div class="ss-main">
+      <div class="main-left"></div>
+      <div class="main-right"></div>
+    </div>
   </div>
 </template>
 
@@ -100,7 +104,16 @@ export default {
       activeIndex: '',
       // 是否展开收起左侧导航
       isCollapse: false,
-      isShowLevel2: false
+      isShowLevel2: false,
+      obj: {
+        name: 'www',
+        age: 12
+      },
+      s: {
+        a: {
+          b: 'a'
+        }
+      }
     }
   },
   computed: {
@@ -114,10 +127,20 @@ export default {
       this.isShowLevel2 = true
     }
     this.activeIndex = this.$route.path
+    // delete this.obj.name
+    // this.obj.name.__ob__.dep.notify()
+    // this.createTree()
+    this.aaa()
   },
   methods: {
     showOrHide () {
+      this.s.a = {
+      }
       this.isCollapse = !this.isCollapse
+    },
+    aaa () {
+      let arr = Array.from({length: 13}).map((item, i) => i + 1)
+      console.log(arr)
     }
   },
   watch: {
@@ -128,6 +151,9 @@ export default {
       // if (!to.meta.alone) {
       //   this.activeIndex = to.path
       // }
+    },
+    's' () {
+      console.log('/////')
     }
   }
 }
@@ -255,4 +281,23 @@ export default {
     font-size: 14px;
   }
 }
+// .ss-main {
+//   position: relative;
+//   width: 100%;
+//   height: 300px;
+//   background-color: #2D3839;
+// }
+// .main-left {
+//   position: absolute;
+//   left: 0px;
+//   top: 0px;
+//   width: 20px;
+//   height: 100%;
+//   background-color: #33cde5;
+// }
+// .main-right {
+//   height: 100%;
+//   background-color: red;
+//   margin-left: 20px;
+// }
 </style>

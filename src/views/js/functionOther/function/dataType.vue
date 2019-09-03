@@ -270,6 +270,15 @@ var reg = new RegExp("[bc]at", "i")
     <p>split()方法可以接受第二个参数，用于指定数组的大小</p>
     <p>localCompare()比较两个字符串在字母表中的大小</p>
     <p>fromCharCode()接受一或多个字符编码，然后将它们转换成一个字符串</p>
+    <h4>10.实现一个new</h4>
+    <pre class="code-content">
+function _new(fn, ...args) {
+    const obj = {}
+    object.setPrototypeOf(obj, fn.prototype)
+    const result = fn.apply(obj, args)
+    return obj instanceof Object ? result : obj
+}
+</pre>
 </div>
 </template>
 <script>
