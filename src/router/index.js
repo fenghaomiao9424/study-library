@@ -8,6 +8,7 @@ import flex from '@/views/css/flex'
 import functionArr from '@/views/js/functionArr'
 import functionObj from '@/views/js/functionObj'
 import functionHanshu from '@/views/js/functionHanshu'
+import Ts from '@/views/js/Ts'
 // es6方法
 import es6 from '@/views/js/es6/index'
 import esFunctionStr from '@/views/js/es6/function/str'
@@ -50,6 +51,7 @@ const router = new Router({
     { path: '/js/functionArr', component: functionArr },
     { path: '/js/functionObj', component: functionObj },
     { path: '/js/functionHanshu', component: functionHanshu },
+    { path: '/js/Ts', component: Ts },
     {
       path: '/js/es6',
       redirect: '/js/es6/esFunctionStr',

@@ -49,6 +49,14 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        // use: ['babel-loader', {
+        //   loader: path.resolve('./src/loaders/test-loader.js'),
+        //   options: {
+        //     replaceMap: {
+        //       'lazyLayout': 'lazyLayout1111111',
+        //     }
+        //   }
+        // }],
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
@@ -78,7 +86,14 @@ module.exports = {
       {
         test: /\.jade$/,
         loader: 'jade'
-      }
+      },
+    ]
+  },
+  resolveLoader: {
+    // 告诉 webpack 该去那个目录下找 loader 模块
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, './src/loaders')
     ]
   },
   node: {
