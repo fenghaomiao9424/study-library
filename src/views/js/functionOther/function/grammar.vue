@@ -25,6 +25,20 @@
     <p>1.CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用</p>
     <p>2.CommonJS 模块是运行时加载，ES6 模块是编译时输出接口</p>
     <p>3.JS 引擎对脚本静态分析的时候，遇到模块加载命令import，就会生成一个<span>只读引用</span>。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。</p>
+    <h4>6.js新特性</h4>
+    <p>1.可选链操作符</p>
+    <pre class="code-content">
+let nestedProp = obj && obj.first && obj.first.second; ==> let nestedProp = obj?.first?.second;
+</pre>
+    <p>2.空位合并操作符 ??</p>
+    <p>有了它，我们仅在第一项为 null 或 undefined 时设置默认值。</p>
+    <pre class="code-content">
+let c = a ?? b;
+// 等价于let c = a !== undefined && a !== null ? a : b;
+</pre>
+    <p>3.BigInt</p>
+    <p>可在数字后边加上n或者使用全局方法BigInt()创建</p>
+    <p>比较number和BigInt是可以的，但是不能把它们相加</p>
   </div>
 </template>
 <script>

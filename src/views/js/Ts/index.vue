@@ -52,14 +52,11 @@ interface people {
   age: number,
 }
 const person = 'string' as any as people // 不推荐
-
-interface people {
-  name: string,
-  age: number,
-}
 const person = {} as people
 </pre>
-    <h4>6.类型解构</h4>
+    <h4>6.interface与类型别名的区别</h4>
+    <p>interface只能用于定义对象类型，而 type 的声明方式除了对象之外还可以定义交叉、联合、原始类型等，类型声明的方式适用范围显然更加广泛。</p>
+    <p>但是interface也有特定用途：interface可以实现接口的extends和implements。interface可以实现接口合并声明</p>
   </div>
 </template>
 <script>
