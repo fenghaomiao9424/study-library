@@ -156,6 +156,8 @@ function getNode(tree) {
 }
 //[1, 2, 3, 4, 5, 6, 7]
 </pre>
+    <h4>6.跨域</h4>
+    <p>http默认端口80，https默认端口443</p>
   </div>
 </template>
 <script>

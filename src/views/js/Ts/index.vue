@@ -57,6 +57,8 @@ const person = {} as people
     <h4>6.interface与类型别名的区别</h4>
     <p>interface只能用于定义对象类型，而 type 的声明方式除了对象之外还可以定义交叉、联合、原始类型等，类型声明的方式适用范围显然更加广泛。</p>
     <p>但是interface也有特定用途：interface可以实现接口的extends和implements。interface可以实现接口合并声明</p>
+    <h4>7.装饰器</h4>
+    <p>多个装饰器可以用在同一个声明上，可以写在一行或多行上。会按由上至下依次对装饰器表达式求值，求值的结果会被当做函数，由上至下依次调用</p>
   </div>
 </template>
 <script>

@@ -271,6 +271,7 @@ var reg = new RegExp("[bc]at", "i")
     <p>localCompare()比较两个字符串在字母表中的大小</p>
     <p>fromCharCode()接受一或多个字符编码，然后将它们转换成一个字符串</p>
     <h4>10.实现一个new</h4>
+    <p></p>
     <pre class="code-content">
 function _new(fn, ...args) {
     const obj = {}
