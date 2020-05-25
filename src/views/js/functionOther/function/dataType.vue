@@ -271,7 +271,8 @@ var reg = new RegExp("[bc]at", "i")
     <p>localCompare()比较两个字符串在字母表中的大小</p>
     <p>fromCharCode()接受一或多个字符编码，然后将它们转换成一个字符串</p>
     <h4>10.实现一个new</h4>
-    <p></p>
+    <p>new的执行过程：1.创建一个空对象，构造函数中的this指向这个空对象2.这个新对象被执行 [[原型]] 连接3.执行构造函数方法，属性和方法被添加到this引用的对象中
+4.如果构造函数中没有返回其它对象，那么返回this，即创建的这个的新对象，否则，返回构造函数中返回的对象</p>
     <pre class="code-content">
 function _new(fn, ...args) {
     const obj = {}
